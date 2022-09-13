@@ -1,9 +1,9 @@
 #include "Listener.h"
 
-Listener::Listener(Button* button, Led* led)
+Listener::Listener(Button* button, Controller* control)
 {
     power_button = button;
-    light = led;
+    controller = control;
 }
 
 Listener::~Listener() {};
@@ -12,6 +12,6 @@ void Listener::Chech_event()
 {
     if(power_button->getState() == RELEASE_ACTIVE) 
     {
-        light->Toggle();
+        controller->Update_event("power_button");
     }
 }

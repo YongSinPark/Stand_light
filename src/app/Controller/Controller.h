@@ -4,9 +4,7 @@
 #include "View.h"
 #include <string>
 
-
-
-
+enum {BTN_RESET, BTN_FIRST, BTN_SECOND, BTN_THIRD, BTN_FOURTH, BTN_FIVTH};
 class Controller
 {
 private:
@@ -16,7 +14,7 @@ private:
 public:
     Controller(View *viewer);
     virtual ~Controller();
-    void Update_event(std::string str_btn);
+    void Update_event(int num);
 };
 
 #endif

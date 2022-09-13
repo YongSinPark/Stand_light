@@ -1,8 +1,8 @@
 #include "Controller.h"
 
-Controller::Controller(Led *led)
+Controller::Controller(View *viewer)
 {
-    light = led;
+    view = viewer;
     light_state = LIGHT_OFF;
 }
 
@@ -19,7 +19,7 @@ void Controller::Update_event(std::string str_btn)
         if(str_btn == "power_button")
         {
             light_state = LIGHT_ON;
-            light->On();
+            view->Update_state("State_on");
         }
         break;
 
@@ -27,7 +27,7 @@ void Controller::Update_event(std::string str_btn)
         if(str_btn == "power_button")
         {
             light_state = LIGHT_OFF;
-            light->Off();
+            view->Update_state("State_off");
         }
         break;
     }    

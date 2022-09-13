@@ -1,20 +1,20 @@
 #ifndef CONTROLLER_H
 #define CONTROLLER_H
 
-#include "Led.h"
+#include "View.h"
 #include <string>
 
 
-enum {LIGHT_OFF, LIGHT_ON};
+
 
 class Controller
 {
 private:
     int light_state;
-    Led* light;
+    View* view;
 
 public:
-    Controller(Led *led);
+    Controller(View *viewer);
     virtual ~Controller();
     void Update_event(std::string str_btn);
 };
